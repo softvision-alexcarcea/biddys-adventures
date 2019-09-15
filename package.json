@@ -1,0 +1,26 @@
+{
+  "name": "biddys-adventures",
+  "version": "1.0.0",
+  "description": "SV Web Community Monthly Challenge: Biddy's Adventures (August 2019)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ./public -o"
+  },
+  "keywords": [
+    "sv",
+    "web",
+    "community",
+    "monthly",
+    "challenge",
+    "biddy",
+    "adventure",
+    "august",
+    "2019"
+  ],
+  "author": "Alexandru Carcea",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

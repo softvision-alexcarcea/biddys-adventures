@@ -1,0 +1,334 @@
+html {
+  background-color: goldenrod;
+  font-family: 'Homemade Apple', cursive;
+}
+
+h1 {
+  color: darkgoldenrod;
+  text-shadow: 0 4px 8px lightgoldenrodyellow;
+  text-align: center;
+}
+
+figure {
+  border: solid transparent;
+  border-top-width: 30px;
+  border-left-width: 20px;
+  border-right-width: 20px;
+  border-bottom-width: 50px;
+
+  transform: translateX(-200vmax);
+  transform-origin: center;
+
+  position: absolute;
+}
+
+figure:hover {
+  z-index: 1;
+}
+
+img {
+  max-width: 500px;
+}
+
+figure::before {
+  content: " ";
+  background-color: white;
+  opacity: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  z-index: 2;
+}
+
+figure::after {
+  content: " ";
+  background: url("assets/biddy.png") no-repeat;
+  background-size: contain;
+ 
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+
+figcaption {
+  text-align: center;
+  height: 35px;
+  visibility: hidden;
+}
+
+figure:nth-of-type(1) {
+  animation: slide 1s 3s, frame 0s 6s, rotate-first 3s 7s, focus-first 3s 40s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(1)::before {
+  animation: snapshot .5s 6s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(1)::after {
+  bottom: 120px;
+}
+
+figure:nth-of-type(1) figcaption {
+  animation: pop-in 0s 6s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(2) {
+  animation: slide 1s 11s, frame 0s 14s, rotate-second 3s 15s, focus-second 3s 40.25s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(2)::before {
+  animation: snapshot .5s 14s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(2)::after {
+  left: 100px;
+}
+
+figure:nth-of-type(2) figcaption {
+  animation: pop-in 0s 14s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(3) {
+  animation: slide 1s 16s, frame 0s 19s, rotate-third 3s 20s, focus-third 3s 40.5s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(3)::before {
+  animation: snapshot .5s 19s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(3)::after {
+  bottom: 160px;
+  left: 100px;
+}
+
+figure:nth-of-type(3) figcaption {
+  animation: pop-in 0s 19s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(4) {
+  animation: slide 1s 24s, frame 0s 27s, rotate-fourth 3s 28s, focus-fourth 3s 40.75s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(4)::before {
+  animation: snapshot .5s 27s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(4)::after {
+  left: 100px;
+}
+
+figure:nth-of-type(4) figcaption {
+  animation: pop-in 0s 27s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(5) {
+  animation: slide 1s 32s, frame 0s 35s, rotate-fifth 3s 36s, focus-fifth 3s 41s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(5)::before {
+  animation: snapshot .5s 35s;
+  animation-fill-mode: forwards;
+}
+
+figure:nth-of-type(5)::after {
+  left: 85%;
+}
+
+figure:nth-of-type(5) figcaption {
+  animation: pop-in 0s 35s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes snapshot {
+  from {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: skewX(15deg) translateX(-100%);
+  }
+  85% {
+    transform: skewX(15deg) translateX(0);
+  }
+  95% {
+    transform: skewX(-5deg) translateX(0);
+  }
+  to {
+    transform: skewX(0) translateX(0);
+  }
+}
+
+@keyframes frame {
+  from, to {
+    background-color: white;
+    border-color: white;
+    box-shadow: 0 4px 8px darkgoldenrod;
+  }
+}
+
+@keyframes rotate-first {
+  from {
+    transform: rotate(0deg) scale(1);
+    top: 0;
+    left: 0;
+  }
+  to {
+    transform: rotate(1065deg) scale(0.25);
+    top: 0;
+    left: calc(40vw - 200px);
+  }
+}
+
+@keyframes rotate-second {
+  from {
+    transform: rotate(0deg) scale(1);
+    top: 0;
+    left: 0;
+  }
+  to {
+    transform: rotate(1080deg) scale(0.25);
+    top: -50px;
+    left: calc(40vw);
+  }
+}
+
+@keyframes rotate-third {
+  from {
+    transform: rotate(0deg) scale(1);
+    top: 0;
+    left: 0;
+  }
+  to {
+    transform: rotate(1095deg) scale(0.25);
+    top: 0;
+    left: calc(40vw + 200px);
+  }
+}
+
+@keyframes rotate-fourth {
+  from {
+    transform: rotate(0deg) scale(1);
+    top: 0;
+    left: 0;
+  }
+  to {
+    transform: rotate(1075deg) scale(0.25);
+    top: 150px;
+    left: calc(40vw - 100px);
+  }
+}
+
+@keyframes rotate-fifth {
+  from {
+    transform: rotate(0deg) scale(1);
+    top: 0;
+    left: 0;
+  }
+  to {
+    transform: rotate(1085deg) scale(0.25);
+    top: 150px;
+    left: calc(40vw + 100px);
+  }
+}
+
+@keyframes focus-first {
+  from {
+    transform: rotate(1065deg) scale(0.25);
+    top: 0;
+    left: calc(40vw - 200px);
+  }
+  to {
+    transform: rotate(1065deg) scale(0.75);
+    top: 50px;
+    left: 0;
+  }
+}
+
+@keyframes focus-second {
+  from {
+    transform: rotate(1080deg) scale(0.25);
+    top: -50px;
+    left: calc(40vw);
+  }
+  to {
+    transform: rotate(1080deg) scale(0.75);
+    top: 0px;
+    left: 25%;
+  }
+}
+
+@keyframes focus-third {
+  from {
+    transform: rotate(1095deg) scale(0.25);
+    top: 0;
+    left: calc(40vw + 200px);
+  }
+  to {
+    transform: rotate(1095deg) scale(0.75);
+    top: 50px;
+    left: 50%;
+  }
+}
+
+@keyframes focus-fourth {
+  from {
+    transform: rotate(1075deg) scale(0.25);
+    top: 150px;
+    left: calc(40vw - 100px);
+  }
+  to {
+    transform: rotate(1075deg) scale(0.75);
+    top: 350px;
+    left: 100px;
+  }
+}
+
+@keyframes focus-fifth {
+  from {
+    transform: rotate(1085deg) scale(0.25);
+    top: 150px;
+    left: calc(40vw + 100px);
+  }
+  to {
+    transform: rotate(1085deg) scale(0.75);
+    top: 350px;
+    left: calc(25vw + 200px);
+  }
+}
+
+@keyframes pop-in {
+  from, to {
+    visibility: visible;
+  }
+}
+
